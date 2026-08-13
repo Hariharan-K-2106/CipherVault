@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CipherVault - Secure Password Manager"
+    >
+
+    <title>CipherVault | Secure Password Manager</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         APP
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Brand -->
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🔐
+                </div>
+
+                <div class="brand-text">
+
+                    <h2>CipherVault</h2>
+
+                    <span>
+                        SECURE PASSWORD MANAGER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="navigation">
+
+                <div class="nav-title">
+                    OVERVIEW
+                </div>
+
+
+                <button
+                    class="nav-item active"
+                    data-page="dashboard"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </button>
+
+
+                <div class="nav-title security-title">
+                    SECURITY TOOLS
+                </div>
+
+
+                <button
+                    class="nav-item"
+                    data-page="strength"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        ◉
+                    </span>
+
+                    <span>
+                        Password Strength
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-page="generator"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        ⬡
+                    </span>
+
+                    <span>
+                        Password Generator
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-page="vault"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        ▣
+                    </span>
+
+                    <span>
+                        Secure Vault
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-page="security"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        ◇
+                    </span>
+
+                    <span>
+                        Security Analysis
+                    </span>
+
+                </button>
+
+
+                <div class="nav-title security-title">
+                    SYSTEM
+                </div>
+
+
+                <button
+                    class="nav-item"
+                    data-page="settings"
+                    type="button"
+                >
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </button>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+
+            <div class="sidebar-bottom">
+
+                <div class="vault-status">
+
+                    <span class="status-indicator"></span>
+
+                    <div>
+
+                        <strong>
+                            Vault Status
+                        </strong>
+
+                        <span>
+                            Protected locally
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="lock-vault-btn"
+                    id="lockVaultBtn"
+                    type="button"
+                >
+
+                    🔒
+
+                    <span>
+                        Lock Vault
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN
+        ================================================== -->
+
+        <main class="main">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="top-header">
+
+
+                <div class="header-left">
+
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        ☰
+                    </button>
+
+
+                    <div>
+
+                        <div
+                            class="breadcrumb"
+                            id="breadcrumb"
+                        >
+                            SECURITY CENTER
+                        </div>
+
+                        <h1 id="pageTitle">
+                            Security Dashboard
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="header-actions">
+
+
+                    <!-- Search -->
+
+                    <button
+                        class="header-icon-btn"
+                        id="searchBtn"
+                        type="button"
+                        aria-label="Search"
+                    >
+                        ⌕
+                    </button>
+
+
+                    <!-- Theme -->
+
+                    <button
+                        class="header-icon-btn"
+                        id="themeToggle"
+                        type="button"
+                        aria-label="Toggle theme"
+                    >
+                        ☾
+                    </button>
+
+
+                    <!-- Notifications -->
+
+                    <button
+                        class="header-icon-btn"
+                        id="notificationBtn"
+                        type="button"
+                        aria-label="Notifications"
+                    >
+
+                        ♢
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <!-- Profile -->
+
+                    <div class="profile">
+
+                        <div class="profile-avatar">
+                            CV
+                        </div>
+
+                        <div class="profile-info">
+
+                            <strong>
+                                CipherVault
+                            </strong>
+
+                            <span>
+                                ● Protected
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTAINER
+            ================================================== -->
+
+            <div class="page-container">
+
+
+
+                <!-- =================================================
+                     DASHBOARD PAGE
+                ================================================== -->
+
+                <section
+                    class="page active-page"
+                    id="dashboard"
+                >
+
+
+                    <!-- Welcome -->
+
+                    <div class="welcome-section">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                YOUR SECURITY CENTER
+                            </span>
+
+                            <h2>
+                                Stay secure.
+                                <span>
+                                    Stay in control.
+                                </span>
+                            </h2>
+
+                            <p>
+                                Monitor your password security
+                                and protect your digital credentials.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-btn"
+                            id="dashboardAddBtn"
+                            type="button"
+                        >
+                            + Add Credential
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Security Overview -->
+
+                    <div class="security-overview-grid">
+
+
+                        <!-- Security Score -->
+
+                        <div class="security-score-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <span class="card-label">
+                                        OVERALL SECURITY
+                                    </span>
+
+                                    <h3>
+                                        Your Security Score
+                                    </h3>
+
+                                </div>
+
+                                <span
+                                    class="secure-badge"
+                                    id="securityBadge"
+                                >
+                                    ● Secure
+                                </span>
+
+                            </div>
+
+
+                            <div class="score-content">
+
+                                <div class="score-ring">
+
+                                    <svg
+                                        viewBox="0 0 160 160"
+                                        aria-hidden="true"
+                                    >
+
+                                        <circle
+                                            class="score-bg"
+                                            cx="80"
+                                            cy="80"
+                                            r="68"
+                                        ></circle>
+
+                                        <circle
+                                            class="score-progress"
+                                            id="scoreProgress"
+                                            cx="80"
+                                            cy="80"
+                                            r="68"
+                                        ></circle>
+
+                                    </svg>
+
+
+                                    <div class="score-value">
+
+                                        <strong id="securityScore">
+                                            82
+                                        </strong>
+
+                                        <span>
+                                            / 100
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="score-details">
+
+                                    <h4 id="scoreStatus">
+                                        Good security posture
+                                    </h4>
+
+                                    <p id="scoreDescription">
+                                        Your vault is in good shape.
+                                        Continue improving weak and
+                                        reused passwords.
+                                    </p>
+
+                                    <button
+                                        class="text-btn"
+                                        data-page-link="security"
+                                        type="button"
+                                    >
+                                        View security report →
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Protection -->
+
+                        <div class="quick-security-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <span class="card-label">
+                                        PROTECTION
+                                    </span>
+
+                                    <h3>
+                                        Vault Protection
+                                    </h3>
+
+                                </div>
+
+                                <div class="shield-icon">
+                                    ✓
+                                </div>
+
+                            </div>
+
+
+                            <div class="protection-info">
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Encryption
+                                    </span>
+
+                                    <strong>
+                                        AES-GCM
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Key Derivation
+                                    </span>
+
+                                    <strong>
+                                        PBKDF2
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Storage
+                                    </span>
+
+                                    <strong>
+                                        IndexedDB (local storage)
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Backend
+                                    </span>
+
+                                    <strong>
+                                        None 
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Statistics -->
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                OVERVIEW
+                            </span>
+
+                            <h3>
+                                Vault Statistics
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+
+                        <button class="stat-card" type="button" data-stat-action="vault" aria-label="Open saved passwords">
+
+                            <div class="stat-icon blue">
+                                🔐
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Saved Passwords
+                                </span>
+
+                                <strong id="totalPasswords">
+                                    0
+                                </strong>
+
+                            </div>
+
+                            <span class="stat-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <button class="stat-card" type="button" data-stat-action="strong" aria-label="View strong passwords">
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Strong Passwords
+                                </span>
+
+                                <strong id="strongPasswords">
+                                    0
+                                </strong>
+
+                            </div>
+
+                            <span class="stat-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <button class="stat-card" type="button" data-stat-action="weak" aria-label="View weak passwords">
+
+                            <div class="stat-icon orange">
+                                !
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Weak Passwords
+                                </span>
+
+                                <strong id="weakPasswords">
+                                    0
+                                </strong>
+
+                            </div>
+
+                            <span class="stat-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <button class="stat-card" type="button" data-stat-action="reused" aria-label="View reused passwords">
+
+                            <div class="stat-icon red">
+                                ↻
+                            </div>
+
+                            <div class="stat-info">
+
+                                <span>
+                                    Reused Passwords
+                                </span>
+
+                                <strong id="reusedPasswords">
+                                    0
+                                </strong>
+
+                            </div>
+
+                            <span class="stat-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Quick Actions -->
+
+                    <div class="section-heading action-heading">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                TOOLS
+                            </span>
+
+                            <h3>
+                                Quick Actions
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions-grid">
+
+
+                        <button
+                            class="tool-card"
+                            data-page-link="strength"
+                            type="button"
+                        >
+
+                            <div class="tool-icon blue">
+                                ◉
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Check Password
+                                </h4>
+
+                                <p>
+                                    Analyze your password strength
+                                </p>
+
+                            </div>
+
+                            <span class="tool-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="tool-card"
+                            data-page-link="generator"
+                            type="button"
+                        >
+
+                            <div class="tool-icon purple">
+                                ⬡
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Generate Password
+                                </h4>
+
+                                <p>
+                                    Create a strong random password
+                                </p>
+
+                            </div>
+
+                            <span class="tool-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+
+                        <button
+                            class="tool-card"
+                            data-page-link="vault"
+                            type="button"
+                        >
+
+                            <div class="tool-icon green">
+                                ▣
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Open Secure Vault
+                                </h4>
+
+                                <p>
+                                    Manage your saved credentials
+                                </p>
+
+                            </div>
+
+                            <span class="tool-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- Security Alerts -->
+
+                    <div class="section-heading alert-heading">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                ATTENTION
+                            </span>
+
+                            <h3>
+                                Security Alerts
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="text-btn"
+                            data-page-link="security"
+                            type="button"
+                        >
+                            View all
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="alerts-list"
+                        id="dashboardAlerts"
+                    >
+
+                        <div class="security-alert">
+
+                            <div class="alert-icon">
+                                ✓
+                            </div>
+
+                            <div class="alert-content">
+
+                                <strong>
+                                    Your vault is ready
+                                </strong>
+
+                                <p>
+                                    Add your first credential
+                                    to start protecting your accounts.
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="alert-action"
+                                id="alertAddBtn"
+                                type="button"
+                            >
+                                Add now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     PASSWORD STRENGTH PAGE
+                ================================================== -->
+
+                <section
+                    class="page"
+                    id="strength"
+                >
+
+                    <div class="page-intro">
+
+                        <span class="eyebrow">
+                            SECURITY TOOL
+                        </span>
+
+                        <h2>
+                            Password Strength Checker
+                        </h2>
+
+                        <p>
+                            Analyze your password and discover
+                            how secure it really is.
+                        </p>
+
+                    </div>
+
+
+                    <div class="strength-layout">
+
+
+                        <!-- Checker -->
+
+                        <div class="panel strength-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h3>
+                                        Analyze Password
+                                    </h3>
+
+                                    <p>
+                                        Your password is analyzed
+                                        locally in your browser.
+                                    </p>
+
+                                </div>
+
+                                <span class="privacy-badge">
+                                    🔒 Local
+                                </span>
+
+                            </div>
+
+
+                            <div class="password-field">
+
+                                <label for="strengthPassword">
+                                    Enter Password
+                                </label>
+
+
+                                <div class="password-input-wrapper">
+
+                                    <input
+                                        type="password"
+                                        id="strengthPassword"
+                                        placeholder="Enter a password to analyze..."
+                                        autocomplete="off"
+                                    >
+
+                                    <button
+                                        class="password-toggle"
+                                        data-target="strengthPassword"
+                                        type="button"
+                                        aria-label="Show password"
+                                    >
+                                        👁
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Score -->
+
+                            <div class="strength-score">
+
+                                <div class="strength-score-header">
+
+                                    <span>
+                                        Security Score
+                                    </span>
+
+                                    <strong id="strengthScore">
+                                        0/100
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="strength-progress">
+
+                                    <div
+                                        class="strength-progress-bar"
+                                        id="strengthProgressBar"
+                                    ></div>
+
+                                </div>
+
+
+                                <div
+                                    class="strength-level"
+                                    id="strengthLevel"
+                                >
+                                    Enter a password
+                                </div>
+
+                            </div>
+
+
+                            <!-- Requirements -->
+
+                            <div class="requirements">
+
+                                <div class="requirements-header">
+
+                                    <h4>
+                                        Password Requirements
+                                    </h4>
+
+                                    <span>
+                                        Recommended
+                                    </span>
+
+                                </div>
+
+
+                                <div
+                                    class="requirement"
+                                    data-requirement="length"
+                                >
+
+                                    <span>×</span>
+
+                                    <p>
+                                        At least 8 characters
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="requirement"
+                                    data-requirement="uppercase"
+                                >
+
+                                    <span>×</span>
+
+                                    <p>
+                                        Contains uppercase letter
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="requirement"
+                                    data-requirement="lowercase"
+                                >
+
+                                    <span>×</span>
+
+                                    <p>
+                                        Contains lowercase letter
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="requirement"
+                                    data-requirement="number"
+                                >
+
+                                    <span>×</span>
+
+                                    <p>
+                                        Contains a number
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="requirement"
+                                    data-requirement="symbol"
+                                >
+
+                                    <span>×</span>
+
+                                    <p>
+                                        Contains a special symbol
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Suggestions -->
+
+                        <div class="panel suggestion-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h3>
+                                        Security Guidance
+                                    </h3>
+
+                                    <p id="strengthSuggestion">
+                                        Simple ways to improve
+                                        your password security.
+                                    </p>
+
+                                </div>
+
+                                <div class="suggestion-icon">
+                                    ✦
+                                </div>
+
+                            </div>
+
+
+                            <div class="suggestion-box">
+
+                                <div class="suggestion-box-icon">
+                                    💡
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Why password strength matters
+                                    </strong>
+
+                                    <p>
+                                        Strong passwords make it
+                                        significantly harder for
+                                        attackers to guess or
+                                        brute-force your accounts.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="security-tip">
+
+                                <span>
+                                    🛡️
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Security Tip
+                                    </strong>
+
+                                    <p>
+                                        Use a unique password for
+                                        every important account.
+                                        Never reuse your main password.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     PASSWORD GENERATOR PAGE
+                ================================================== -->
+
+                <section
+                    class="page"
+                    id="generator"
+                >
+
+                    <div class="page-intro">
+
+                        <span class="eyebrow">
+                            SECURITY TOOL
+                        </span>
+
+                        <h2>
+                            Password Generator
+                        </h2>
+
+                        <p>
+                            Create strong, random passwords
+                            using secure browser-generated randomness.
+                        </p>
+
+                    </div>
+
+
+                    <div class="panel generator-panel">
+
+
+                        <div class="generated-password">
+
+                            <span>
+                                GENERATED PASSWORD
+                            </span>
+
+
+                            <div class="generated-password-box">
+
+                                <code id="generatedPassword">
+                                    Click generate to create a password
+                                </code>
+
+                                <button
+                                    class="copy-btn"
+                                    id="copyGeneratedBtn"
+                                    data-target="generatedPassword"
+                                    type="button"
+                                >
+                                    Copy
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="generator-controls">
+
+
+                            <div class="control-group">
+
+                                <label for="passwordLength">
+                                    Password Length
+                                </label>
+
+
+                                <div class="range-wrapper">
+
+                                    <input
+                                        type="range"
+                                        id="passwordLength"
+                                        min="8"
+                                        max="64"
+                                        value="20"
+                                    >
+
+                                    <span id="passwordLengthValue">
+                                        20
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="generator-options">
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        id="includeUppercase"
+                                        checked
+                                    >
+
+                                    <span>
+                                        Uppercase
+                                    </span>
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        id="includeLowercase"
+                                        checked
+                                    >
+
+                                    <span>
+                                        Lowercase
+                                    </span>
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        id="includeNumbers"
+                                        checked
+                                    >
+
+                                    <span>
+                                        Numbers
+                                    </span>
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        id="includeSymbols"
+                                        checked
+                                    >
+
+                                    <span>
+                                        Symbols
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <button
+                                class="primary-btn generate-btn"
+                                id="generatePasswordBtn"
+                                type="button"
+                            >
+                                ⟳ Generate Secure Password
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SECURE VAULT PAGE
+                ================================================== -->
+
+                <section
+                    class="page"
+                    id="vault"
+                >
+
+                    <div class="page-intro vault-intro">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                SECURE STORAGE
+                            </span>
+
+                            <h2>
+                                Your Password Vault
+                            </h2>
+
+                            <p>
+                                Your encrypted credentials are
+                                stored locally on this device.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-btn"
+                            id="addCredentialBtn"
+                            type="button"
+                        >
+                            + Add Credential
+                        </button>
+
+                    </div>
+
+
+                    <div class="vault-toolbar">
+
+                        <div class="vault-search">
+
+                            <span>
+                                ⌕
+                            </span>
+
+                            <input
+                                type="search"
+                                id="vaultSearch"
+                                placeholder="Search your credentials..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="credentials-grid"
+                        id="credentialsGrid"
+                    >
+
+                        <div class="empty-vault">
+
+                            <div class="empty-vault-icon">
+                                🔐
+                            </div>
+
+                            <h3>
+                                Your vault is empty
+                            </h3>
+
+                            <p>
+                                Add your first credential to
+                                securely manage your passwords.
+                            </p>
+
+                            <button
+                                class="primary-btn"
+                                id="emptyVaultAddBtn"
+                                type="button"
+                            >
+                                + Add First Credential
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SECURITY ANALYSIS PAGE
+                ================================================== -->
+
+                <section
+                    class="page"
+                    id="security"
+                >
+
+                    <div class="page-intro">
+
+                        <span class="eyebrow">
+                            SECURITY CENTER
+                        </span>
+
+                        <h2>
+                            Security Analysis
+                        </h2>
+
+                        <p>
+                            Review the security health of your
+                            saved credentials.
+                        </p>
+
+                    </div>
+
+
+                    <div class="analysis-grid">
+
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h3>
+                                        Security Score
+                                    </h3>
+
+                                    <p>
+                                        Overall vault health
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="analysis-score">
+
+                                <strong id="analysisScore">
+                                    82
+                                </strong>
+
+                                <span>
+                                    / 100
+                                </span>
+
+                            </div>
+
+
+                            <div class="requirements">
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Passwords analyzed
+                                    </span>
+
+                                    <strong id="analysisTotal">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Strong passwords
+                                    </span>
+
+                                    <strong id="analysisStrong">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="protection-item">
+
+                                    <span>
+                                        Weak passwords
+                                    </span>
+
+                                    <strong id="analysisWeak">
+                                        0
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h3>
+                                        Security Issues
+                                    </h3>
+
+                                    <p>
+                                        Problems that may need attention
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                class="issue-list"
+                                id="securityIssues"
+                            >
+
+                                <div class="issue-item">
+
+                                    <div class="issue-icon warning">
+                                        !
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            No credentials yet
+                                        </strong>
+
+                                        <p>
+                                            Add credentials to receive
+                                            a detailed security analysis.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SETTINGS PAGE
+                ================================================== -->
+
+                <section
+                    class="page"
+                    id="settings"
+                >
+
+                    <div class="page-intro">
+
+                        <span class="eyebrow">
+                            SYSTEM
+                        </span>
+
+                        <h2>
+                            Settings
+                        </h2>
+
+                        <p>
+                            Configure your CipherVault experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="settings-list">
+
+                        <div class="setting-item">
+                            <div>
+                                <strong>Change Master Password</strong>
+                                <p>Verify your current password and re-encrypt the vault with a new one.</p>
+                            </div>
+                            <button class="secondary-btn" id="changeMasterPasswordBtn" type="button">Change Password</button>
+                        </div>
+
+
+                        <div class="setting-item">
+
+                            <div>
+
+                                <strong>
+                                    Theme
+                                </strong>
+
+                                <p>
+                                    Choose between light and dark mode.
+                                </p>
+
+                            </div>
+
+
+                            <select
+                                class="setting-select"
+                                id="themeSelect"
+                            >
+
+                                <option value="light">
+                                    Light
+                                </option>
+
+                                <option value="dark">
+                                    Dark
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="setting-item">
+
+                            <div>
+
+                                <strong>
+                                    Auto-Lock
+                                </strong>
+
+                                <p>
+                                    Automatically lock the vault
+                                    after inactivity.
+                                </p>
+
+                            </div>
+
+
+                            <select
+                                class="setting-select"
+                                id="autoLockSelect"
+                            >
+
+                                <option value="5">
+                                    5 minutes
+                                </option>
+
+                                <option value="10">
+                                    10 minutes
+                                </option>
+
+                                <option value="15">
+                                    15 minutes
+                                </option>
+
+                                <option value="30">
+                                    30 minutes
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="setting-item">
+
+                            <div>
+
+                                <strong>
+                                    Local Storage
+                                </strong>
+
+                                <p>
+                                    CipherVault stores encrypted
+                                    data locally in your browser.
+                                </p>
+
+                            </div>
+
+                            <span class="privacy-badge">
+                                IndexedDB
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="setting-item danger-setting">
+
+                            <div>
+
+                                <strong>
+                                    Clear Vault
+                                </strong>
+
+                                <p>
+                                    Permanently delete all locally
+                                    stored vault data.
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                class="danger-btn"
+                                id="clearVaultBtn"
+                                type="button"
+                            >
+                                Clear Data
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div class="modal-overlay" id="masterPasswordModal">
+        <div class="modal" role="dialog" aria-modal="true">
+            <div class="modal-header">
+                <div><span class="eyebrow">SECURITY</span><h2>Change Master Password</h2></div>
+                <button class="modal-close" id="closeMasterPasswordModal" type="button" aria-label="Close">×</button>
+            </div>
+            <form id="masterPasswordForm">
+                <div class="form-group"><label for="currentMasterPassword">Current master password</label><div class="password-input-wrapper"><input id="currentMasterPassword" type="password" required><button class="password-toggle" data-target="currentMasterPassword" type="button" aria-label="Show current password">👁</button></div></div>
+                <div class="form-group"><label for="newMasterPassword">New master password</label><div class="password-input-wrapper"><input id="newMasterPassword" type="password" minlength="12" required><button class="password-toggle" data-target="newMasterPassword" type="button" aria-label="Show new password">👁</button></div></div>
+                <div class="form-group"><label for="confirmNewMasterPassword">Confirm new password</label><div class="password-input-wrapper"><input id="confirmNewMasterPassword" type="password" minlength="12" required><button class="password-toggle" data-target="confirmNewMasterPassword" type="button" aria-label="Show confirmation password">👁</button></div></div>
+                <p class="lock-error" id="masterPasswordError"></p>
+                <div class="modal-actions"><button class="secondary-btn" id="cancelMasterPassword" type="button">Cancel</button><button class="primary-btn" type="submit">Update Password</button></div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- =====================================================
+         ADD CREDENTIAL MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="credentialModal"
+    >
+
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="credentialModalTitle"
+        >
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SECURE VAULT
+                    </span>
+
+                    <h2 id="credentialModalTitle">
+                        Add Credential
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="modalCloseBtn"
+                    type="button"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <form id="credentialForm">
+
+
+                <div class="form-group">
+
+                    <label for="credentialWebsite">
+                        Website / App
+                    </label>
+
+                    <input
+                        type="text"
+                        id="credentialWebsite"
+                        placeholder="e.g. GitHub"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="credentialUsername">
+                        Username / Email
+                    </label>
+
+                    <input
+                        type="text"
+                        id="credentialUsername"
+                        placeholder="name@example.com"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="credentialPassword">
+                        Password
+                    </label>
+
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="credentialPassword"
+                            placeholder="Enter password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            class="password-toggle"
+                            data-target="credentialPassword"
+                            type="button"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                    <button class="text-btn" id="generateVaultPassword" type="button">
+                        Generate a secure password
+                    </button>
+
+                </div>
+
+
+
+                <div class="modal-actions">
+
+                    <button
+                        class="secondary-btn"
+                        id="cancelModalBtn"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        class="primary-btn"
+                        type="submit"
+                    >
+                        Save Credential
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOCK SCREEN
+    ====================================================== -->
+
+    <div
+        class="lock-screen"
+        id="lockScreen"
+    >
+
+        <div class="lock-card">
+
+            <div class="lock-logo">
+                🔐
+            </div>
+
+            <span class="eyebrow">
+                CIPHERVAULT
+            </span>
+
+            <h2 id="lockTitle">Vault Locked</h2>
+
+            <p id="lockDescription">
+                Enter your master password to unlock
+                your secure vault.
+            </p>
+
+            <div class="master-password-warning" id="masterPasswordWarning" hidden>
+                <strong>Important: save this password safely</strong>
+                <span>Your master password is used to derive the encryption key. CipherVault does not store it, so it cannot be recovered if forgotten.</span>
+            </div>
+
+
+            <div class="password-input-wrapper">
+
+                <input
+                    type="password"
+                    id="unlockPassword"
+                    placeholder="Master password"
+                    autocomplete="current-password"
+                >
+
+                <button
+                    class="password-toggle"
+                    data-target="unlockPassword"
+                    type="button"
+                >
+                    👁
+                </button>
+
+            </div>
+
+            <div class="password-input-wrapper" id="confirmPasswordWrapper" hidden>
+                <input type="password" id="confirmMasterPassword" placeholder="Confirm master password" autocomplete="new-password">
+            </div>
+
+
+            <button
+                class="primary-btn unlock-btn"
+                id="unlockVaultBtn"
+                type="button"
+            >
+                🔓 Unlock Vault
+            </button>
+
+
+            <p
+                class="lock-error"
+                id="lockError"
+            ></p>
+
+        </div>
+
+    </div>
+
+    <div class="modal-overlay" id="masterPasswordCreatedModal">
+        <div class="modal" role="dialog" aria-modal="true">
+            <div class="modal-header"><div><span class="eyebrow">SAVE THIS NOW</span><h2>Master Password Created</h2></div></div>
+            <p class="modal-help">Copy or download this password and store it somewhere safe. This is the only time CipherVault will display it.</p>
+            <div class="password-input-wrapper"><input id="createdMasterPassword" type="text" readonly><button class="password-toggle" id="toggleCreatedMasterPassword" type="button">👁</button></div>
+            <div class="modal-actions"><button class="secondary-btn" id="copyCreatedMasterPassword" type="button">Copy</button><button class="secondary-btn" id="downloadCreatedMasterPassword" type="button">Download</button><button class="primary-btn" id="doneCreatedMasterPassword" type="button">I Saved It</button></div>
+        </div>
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <span id="toastIcon">
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
