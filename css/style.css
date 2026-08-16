@@ -2709,3 +2709,298 @@ body.dark-mode .profile-avatar {
 .master-password-warning[hidden] {
     display: none;
 }
+
+/* =========================================================
+   ABOUT US
+   ========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.5fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.about-profile-card {
+    text-align: center;
+}
+
+.about-avatar {
+    width: 82px;
+    height: 82px;
+
+    display: grid;
+    place-items: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 20px;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.about-profile-card h2 {
+    margin: 5px 0 6px;
+
+    font-size: 22px;
+
+    letter-spacing: -0.7px;
+}
+
+.about-role {
+    margin-bottom: 7px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.about-college {
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.about-email {
+    margin-top: 22px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border-light);
+}
+
+.about-email span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text-light);
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.about-email a {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    word-break: break-word;
+}
+
+.about-email a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+   ========================================================= */
+
+.about-content-card h3,
+.about-project-card h3,
+.about-links-card h3 {
+    margin-top: 3px;
+    margin-bottom: 14px;
+
+    font-size: 18px;
+
+    letter-spacing: -0.4px;
+}
+
+.about-content-card p,
+.about-project-card p {
+    margin-bottom: 12px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+.about-content-card p:last-child,
+.about-project-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.about-project-card {
+    grid-column: 1 / -1;
+}
+
+.about-project-card {
+    border-left: 3px solid var(--primary);
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.about-links-card {
+    grid-column: 1 / -1;
+}
+
+.about-links {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.about-link {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--card);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.about-link:hover {
+    transform: translateY(-2px);
+
+    border-color: #bfdbfe;
+
+    background: var(--primary-light);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.about-link-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--primary-light);
+
+    font-size: 17px;
+}
+
+.about-link strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 11px;
+}
+
+.about-link small {
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark-mode .about-link:hover {
+    border-color: #3b82f6;
+
+    background: #172554;
+}
+
+body.dark-mode .about-avatar {
+    background: #172554;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .about-links {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-project-card,
+    .about-links-card {
+        grid-column: auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-links {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid .panel {
+        padding: 19px;
+    }
+
+    .about-profile-card h2 {
+        font-size: 20px;
+    }
+
+}

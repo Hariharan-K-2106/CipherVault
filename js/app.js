@@ -367,6 +367,11 @@ function updateHeaderTitle(pageName) {
         settings: {
             title: "Settings",
             breadcrumb: "CIPHERVAULT SETTINGS"
+        },
+
+         about: {
+            title: "About Us",
+            breadcrumb: "ABOUT DEVELOPER"
         }
 
     };
