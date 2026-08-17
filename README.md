@@ -252,21 +252,13 @@ CipherVault provided practical experience in:
 ## Author
 
 ### HARIHARAN K
-
-**GitHub:**
-[https://github.com/Hariharan-K-2106](https://github.com/Hariharan-K-2106)
-
-**Project:**
-CipherVault
-
-**Live Demo:**
-[https://hariharan-k-2106.github.io/CipherVault/](https://hariharan-k-2106.github.io/CipherVault/)
+### ANANDHAROOBHINI B
 
 ---
 
 ## Project Status
 
-**Status:** ✅ Live and deployed
+**Status:** Live and deployed
 
 **Project Type:** Client-Side Web Application
 
