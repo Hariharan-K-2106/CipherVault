@@ -2716,11 +2716,13 @@ body.dark-mode .profile-avatar {
 
 .about-grid {
     display: grid;
+
     grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1.5fr);
+        repeat(2, minmax(0, 1fr));
 
     gap: 18px;
+
+    align-items: stretch;
 }
 
 
@@ -2730,28 +2732,8 @@ body.dark-mode .profile-avatar {
 
 .about-profile-card {
     text-align: center;
-}
-
-.about-avatar {
-    width: 82px;
-    height: 82px;
-
-    display: grid;
-    place-items: center;
-
-    margin: 0 auto 18px;
-
-    border-radius: 20px;
-
-    background: var(--primary-light);
-    color: var(--primary);
-
-    font-size: 25px;
-    font-weight: 800;
-
-    border: 1px solid var(--border);
-
-    box-shadow: var(--shadow-sm);
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .about-profile-card h2 {
@@ -2817,6 +2799,80 @@ body.dark-mode .profile-avatar {
 
 
 /* =========================================================
+   DEVELOPER CONNECT
+   ========================================================= */
+
+.about-developer-connect {
+    margin-top: 22px;
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border-light);
+
+    text-align: left;
+}
+
+.about-developer-connect > .eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+.about-developer-connect {
+    margin-top: 22px;
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border-light);
+
+    text-align: left;
+}
+
+.about-developer-connect > .eyebrow {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-developer-connect .about-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.about-developer-connect .about-link {
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 10px;
+}
+
+.about-developer-connect .about-link-icon {
+    width: 28px;
+    height: 28px;
+
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.about-developer-connect .about-link div {
+    display: flex;
+    align-items: center;
+}
+
+.about-developer-connect .about-link strong {
+    margin: 0;
+    font-size: 10px;
+}
+
+.about-developer-connect .about-link small {
+    display: none;
+}
+
+
+/* =========================================================
    ABOUT CONTENT
    ========================================================= */
 
@@ -2854,20 +2910,32 @@ body.dark-mode .profile-avatar {
 
 .about-project-card {
     grid-column: 1 / -1;
+
+    border-left: 3px solid var(--primary);
 }
 
-.about-project-card {
-    border-left: 3px solid var(--primary);
+
+/* =========================================================
+   TEAM CARD
+   ========================================================= */
+
+.about-team-card {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   DEVELOPER INTRO
+   ========================================================= */
+
+.about-developers-intro {
+    margin-top: 28px;
 }
 
 
 /* =========================================================
    SOCIAL LINKS
    ========================================================= */
-
-.about-links-card {
-    grid-column: 1 / -1;
-}
 
 .about-links {
     display: grid;
@@ -2956,24 +3024,10 @@ body.dark-mode .about-link:hover {
     background: #172554;
 }
 
-body.dark-mode .about-avatar {
-    background: #172554;
-}
-
 
 /* =========================================================
    RESPONSIVE
    ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .about-links {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-}
-
 
 @media (max-width: 850px) {
 
@@ -2981,13 +3035,11 @@ body.dark-mode .about-avatar {
         grid-template-columns: 1fr;
     }
 
-    .about-project-card,
-    .about-links-card {
+    .about-project-card {
         grid-column: auto;
     }
 
 }
-
 
 @media (max-width: 600px) {
 
